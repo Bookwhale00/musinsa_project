@@ -1,4 +1,18 @@
+<!-- product_create.html -->
 {% extends 'base.html' %}
+
+{% block content %}
+  <h1>새 상품 등록</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">등록</button>
+  </form>
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
 
 {% csrf_token %}
 {% block title %}
@@ -38,4 +52,4 @@
 
         </div>
     </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
