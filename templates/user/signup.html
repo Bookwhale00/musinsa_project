@@ -23,6 +23,11 @@
                     <input type="password" class="form-control" id="password2" name="password2">
                 </div>
                 <hr>
+                {% if error_msg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error_msg }}
+                    </div>
+                {% endif %}
                 <div style="float: right">
                     <button type="submit" class="btn btn-primary">회원가입</button>
                     <a href="/signin" class="btn btn-secondary">로그인 페이지로</a>
