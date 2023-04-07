@@ -34,7 +34,12 @@ def signup(request):
 def signin(request):
     # 로그인 view
     if request.method == 'POST':
-        form = SigninForm(request.POST)
+        #form = SigninForm(request.POST)
+        form = SigninForm(data=request.POST)
+        is_valid = form.is_valid()
+        print(is_valid)
+        for field in form:
+            print("Field Error:", field.name,  field.errors)
         if form.is_valid():
             username = form.cleaned_data.get('username','')
             password = form.cleaned_data.get('password','')
