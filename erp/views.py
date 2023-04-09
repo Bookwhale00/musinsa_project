@@ -12,7 +12,8 @@ def product_create(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             product = form.save()
-            return render(request, 'erp/product_list.html')
+            print(form)
+            return redirect('product-list')
         else:
             # 유효성 오류일 때 메시지
             error_msg = '올바른 상품정보를 입력해주세요.'
